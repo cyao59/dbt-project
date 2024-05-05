@@ -1,0 +1,17 @@
+version: 2
+
+models:
+
+  - name: int__countries_codes
+    description: '{{ doc("int__countries_codes") }}'
+    columns:
+      - name: country_code
+        description: '{{ doc("country_code") }}'
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: STRING
+      - name: country_name
+        description: '{{ doc("country_name") }}'
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: STRING

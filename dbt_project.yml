@@ -40,6 +40,18 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+    staging:
+      +materialized: view
+      dataset: "dbt_staging"
+
+    intermediate:
+      +materialized: table
+      dataset: "dbt_intermediate"
+    marts:
+      +materialized: table
+      dataset: "dbt_marts"
+    seeds:
+      +schema: seed_data
     +persist_docs:
         relation: true
         columns: true
